@@ -64,28 +64,49 @@ class MainPage(tk.Frame):
         self.image_label.pack(side="bottom")
 
     def create_widgets(self):
-        self.tfont = tk.font.Font(size=24)
+        self.tfont = tk.font.Font(size=14)
 
         self.back = tk.Button(self)
         self.back["text"] = "Go back."
         self.back["command"] = self.master.switch_to_menu
-        self.back.pack()
+        self.back.grid(row=0, column=1)
+
+        self.save = tk.Button(self)
+        self.save["text"] = "Save."
+        # self.save["command"] = write to file
+        self.save.grid(row=2, column=1)
 
         self.index_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
         self.index_entry.insert("end", "THIS IS MY INDEX")
-        self.index_entry.pack()
+        self.index_entry.grid(row=1, column=0, padx=20, pady=5)
 
         self.middle_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
         self.middle_entry.insert("end", "THIS IS MY MIDDLE")
-        self.middle_entry.pack()
+        self.middle_entry.grid(row=1, column=3, padx=20, pady=5)
 
         self.ring_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
         self.ring_entry.insert("end", "THIS IS MY RING")
-        self.ring_entry.pack()
+        self.ring_entry.grid(row=2, column=0, padx=20, pady=5)
 
         self.pinky_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
         self.pinky_entry.insert("end", "THIS IS MY PINKY")
-        self.pinky_entry.pack()
+        self.pinky_entry.grid(row=2, column=3, padx=20, pady=5)
+        
+        self.index_entry2 = tk.Text(self, width = 20, height = 3, font=self.tfont)
+        self.index_entry2.insert("end", "THIS IS MY INDEX")
+        self.index_entry2.grid(row=3, column=0, padx=20, pady=5)
+
+        self.middle_entry2 = tk.Text(self, width = 20, height = 3, font=self.tfont)
+        self.middle_entry2.insert("end", "THIS IS MY MIDDLE")
+        self.middle_entry2.grid(row=3, column=3, padx=20, pady=5)
+
+        self.ring_entry2 = tk.Text(self, width = 20, height = 3, font=self.tfont)
+        self.ring_entry2.insert("end", "THIS IS MY RING")
+        self.ring_entry2.grid(row=4, column=0, padx=20, pady=5)
+
+        self.pinky_entry2 = tk.Text(self, width = 20, height = 3, font=self.tfont)
+        self.pinky_entry2.insert("end", "THIS IS MY PINKY")
+        self.pinky_entry2.grid(row=4, column=3, padx=20, pady=5)
 
 
 
@@ -98,8 +119,6 @@ class MainPage(tk.Frame):
 
 if __name__ == "__main__":
     root = tk.Tk()
-    WIDTH = 1280
-    HEIGHT = 720
     root.geometry("1280x720")
     root.title("Hand Hero")
     root.resizable(False, False)
