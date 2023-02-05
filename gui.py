@@ -1,6 +1,22 @@
 import tkinter as tk
 from tkinter import font
 from PIL import ImageTk, Image  
+import json
+
+with open("data.json") as f:
+    data = json.load(f)
+
+page_1 = data["pages"][0]
+page_2 = data["pages"][1]
+indexVal1 = (f"{page_1['key_1']}")
+middleVal1 = (f"{page_1['key_2']}")
+ringVal1 = (f"{page_1['key_3']}")
+pinkyVal1 = (f"{page_1['key_4']}")
+
+indexVal2 = (f"{page_2['key_1']}")
+middleVal2 = (f"{page_2['key_2']}")
+ringVal2 = (f"{page_2['key_3']}")
+pinkyVal2 = (f"{page_2['key_4']}")
 
 class Application(tk.Frame):
     def __init__(self, master=None):
@@ -76,36 +92,42 @@ class MainPage(tk.Frame):
         # self.save["command"] = write to file
         self.save.grid(row=2, column=1)
 
+        self.page1_label = tk.Label(self)
+        self.page1_label["text"] = "Page 1"
+        self.page1_label.grid(row=1, column=0)
+
+
+
         self.index_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
-        self.index_entry.insert("end", "THIS IS MY INDEX")
+        self.index_entry.insert("end", indexVal1)
         self.index_entry.grid(row=1, column=0, padx=20, pady=5)
 
         self.middle_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
-        self.middle_entry.insert("end", "THIS IS MY MIDDLE")
-        self.middle_entry.grid(row=1, column=3, padx=20, pady=5)
+        self.middle_entry.insert("end", middleVal1)
+        self.middle_entry.grid(row=2, column=0, padx=20, pady=5)
 
         self.ring_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
-        self.ring_entry.insert("end", "THIS IS MY RING")
-        self.ring_entry.grid(row=2, column=0, padx=20, pady=5)
+        self.ring_entry.insert("end", ringVal1)
+        self.ring_entry.grid(row=3, column=0, padx=20, pady=5)
 
         self.pinky_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
-        self.pinky_entry.insert("end", "THIS IS MY PINKY")
-        self.pinky_entry.grid(row=2, column=3, padx=20, pady=5)
+        self.pinky_entry.insert("end", pinkyVal1)
+        self.pinky_entry.grid(row=4, column=0, padx=20, pady=5)
         
         self.index_entry2 = tk.Text(self, width = 20, height = 3, font=self.tfont)
-        self.index_entry2.insert("end", "THIS IS MY INDEX")
-        self.index_entry2.grid(row=3, column=0, padx=20, pady=5)
+        self.index_entry2.insert("end", indexVal2)
+        self.index_entry2.grid(row=1, column=3, padx=20, pady=5)
 
         self.middle_entry2 = tk.Text(self, width = 20, height = 3, font=self.tfont)
-        self.middle_entry2.insert("end", "THIS IS MY MIDDLE")
-        self.middle_entry2.grid(row=3, column=3, padx=20, pady=5)
+        self.middle_entry2.insert("end", middleVal2)
+        self.middle_entry2.grid(row=2, column=3, padx=20, pady=5)
 
         self.ring_entry2 = tk.Text(self, width = 20, height = 3, font=self.tfont)
-        self.ring_entry2.insert("end", "THIS IS MY RING")
-        self.ring_entry2.grid(row=4, column=0, padx=20, pady=5)
+        self.ring_entry2.insert("end", ringVal2)
+        self.ring_entry2.grid(row=3, column=3, padx=20, pady=5)
 
         self.pinky_entry2 = tk.Text(self, width = 20, height = 3, font=self.tfont)
-        self.pinky_entry2.insert("end", "THIS IS MY PINKY")
+        self.pinky_entry2.insert("end", pinkyVal2)
         self.pinky_entry2.grid(row=4, column=3, padx=20, pady=5)
 
 
