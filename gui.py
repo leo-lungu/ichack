@@ -85,34 +85,54 @@ class MainPage(tk.Frame):
         self.back = tk.Button(self)
         self.back["text"] = "Go back."
         self.back["command"] = self.master.switch_to_menu
-        self.back.grid(row=0, column=1)
+        self.back.grid(row=0, column=2)
 
         self.save = tk.Button(self)
         self.save["text"] = "Save."
         # self.save["command"] = write to file
-        self.save.grid(row=2, column=1)
+        self.save.grid(row=2, column=2)
 
         self.page1_label = tk.Label(self)
-        self.page1_label["text"] = "Page 1"
-        self.page1_label.grid(row=1, column=0)
+        self.page1_label["text"] = "Page one"
+        self.page1_label.grid(row=0, column=1)
 
+        self.page2_label = tk.Label(self)
+        self.page2_label["text"] = "Page two"
+        self.page2_label.grid(row=0, column=3)
+
+
+        self.one_label = tk.Label(self)
+        self.one_label["text"] = "1"
+        self.one_label.grid(row=1, column=0)
+
+        self.two_label = tk.Label(self)
+        self.two_label["text"] = "2"
+        self.two_label.grid(row=2, column=0)
+
+        self.three_label = tk.Label(self)
+        self.three_label["text"] = "3"
+        self.three_label.grid(row=3, column=0)
+
+        self.fourth_label = tk.Label(self)
+        self.fourth_label["text"] = "4"
+        self.fourth_label.grid(row=4, column=0)
 
 
         self.index_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
         self.index_entry.insert("end", indexVal1)
-        self.index_entry.grid(row=1, column=0, padx=20, pady=5)
+        self.index_entry.grid(row=1, column=1, padx=20, pady=5)
 
         self.middle_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
         self.middle_entry.insert("end", middleVal1)
-        self.middle_entry.grid(row=2, column=0, padx=20, pady=5)
+        self.middle_entry.grid(row=2, column=1, padx=20, pady=5)
 
         self.ring_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
         self.ring_entry.insert("end", ringVal1)
-        self.ring_entry.grid(row=3, column=0, padx=20, pady=5)
+        self.ring_entry.grid(row=3, column=1, padx=20, pady=5)
 
         self.pinky_entry = tk.Text(self, width = 20, height = 3, font=self.tfont)
         self.pinky_entry.insert("end", pinkyVal1)
-        self.pinky_entry.grid(row=4, column=0, padx=20, pady=5)
+        self.pinky_entry.grid(row=4, column=1, padx=20, pady=5)
         
         self.index_entry2 = tk.Text(self, width = 20, height = 3, font=self.tfont)
         self.index_entry2.insert("end", indexVal2)
